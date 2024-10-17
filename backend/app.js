@@ -12,12 +12,16 @@ const app = express();
 // Middleware
 app.use(express.json()); // This middleware parses incoming requests with JSON payloads and makes the data accessible in req.body
 
+// Connect to MongoDB Atlas. So my DB is on the cloud and I can work anywhere :)
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log('MongoDB connected'))
+.catch((error) => console.error('MongoDB connection error:', error));
 
 // Basic route to confirm server is running
 // Defines a simple GET route at the root URL (/). 
 // When someone accesses this route, the server responds with the message "Budget Tracker API is running".
 app.get('/', (req, res) => {
-    res.send('Budget Tracker API is running');
+    res.send("Einju's Road to Hyperion:");
 });
 
 // Start the server
