@@ -1,0 +1,18 @@
+# Node.js
+node_modules/              # Ignore dependencies (both frontend and backend)
+npm-debug.log*             # Ignore npm debug logs
+
+# Environment variables
+*.env                      # Ignore environment variable files
+
+# Build outputs
+dist/                      # Ignore dist directories if you use them for builds
+build/                     # Ignore build directories (React production build)
+
+# System Files
+.DS_Store                  # macOS system file
+Thumbs.db                  # Windows system file
+
+# Logs
+logs                       # Ignore log files
+*.log
