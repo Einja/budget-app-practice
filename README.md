@@ -1,5 +1,3 @@
-# budget-app-practice
-
 For creating a Personal Budget Tracker, here are the following requirements:
 
 **User Authentication**
