@@ -1,0 +1,26 @@
+{
+  "name": "budget-app-practice",
+  "version": "1.0.0",
+  "description": "practice for full-stack development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Einja/budget-app-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Einja/budget-app-practice/issues"
+  },
+  "homepage": "https://github.com/Einja/budget-app-practice#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.1"
+  }
+}
