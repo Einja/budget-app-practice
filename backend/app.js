@@ -1,6 +1,7 @@
 const express = require('express'); // For building web apps and APIs easier
 const mongoose = require('mongoose'); // interact with MongoDB databases
 const dotenv = require('dotenv'); // load environmental variables in .env files to process.env
+const authRoutes = require('./routes/auth');
 
 // Load environment variables
 dotenv.config();
@@ -11,6 +12,7 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // This middleware parses incoming requests with JSON payloads and makes the data accessible in req.body
+app.use('/api/auth', authRoutes);
 
 // Connect to MongoDB Atlas. So my DB is on the cloud and I can work anywhere :)
 mongoose.connect(process.env.MONGO_URI)
