@@ -1,6 +1,7 @@
 const express = require('express'); // For building web apps and APIs easier
 const mongoose = require('mongoose'); // interact with MongoDB databases
 const dotenv = require('dotenv'); // load environmental variables in .env files to process.env
+const cors = require('cors'); // Allows frontend and backend to communicate on different ports
 
 const authRoutes = require('./routes/auth');
 const expenseRoutes = require('./routes/expense');
@@ -14,6 +15,10 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // This middleware parses incoming requests with JSON payloads and makes the data accessible in req.body
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
 
 // Routes
 app.use('/api/auth', authRoutes);
