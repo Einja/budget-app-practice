@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
         res.status(500).json({ message: 'Server error', error });
         console.log("Failure");
     }
-})
+});
 
 // Login Route: User wants to login to existing account
 router.post('/login', async (req, res) => {
@@ -54,6 +54,7 @@ router.post('/login', async (req, res) => {
         // Generate JWT token
         const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.json({ token });
+        console.log("Login success");
     } 
     catch (error) {
         res.status(500).json({ message: 'Server error', error });
