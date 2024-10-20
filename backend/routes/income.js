@@ -17,7 +17,8 @@ router.post('/', authMiddleware, async (req, res) => {
         });
         const savedIncome = await newIncome.save();
         res.status(201).json(savedIncome);
-    } catch (err) {
+    } 
+    catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
     }
@@ -28,7 +29,8 @@ router.get('/', authMiddleware, async (req, res) => {
     try {
         const incomeEntries = await Income.find({ user: req.user.userId });
         res.json(incomeEntries);
-    } catch (err) {
+    } 
+    catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
     }
@@ -47,7 +49,8 @@ router.put('/:id', authMiddleware, async (req, res) => {
         }
         income = await Income.findByIdAndUpdate(req.params.id, { $set: { amount, source, description, date } }, { new: true });
         res.json(income);
-    } catch (err) {
+    } 
+    catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
     }
@@ -65,7 +68,8 @@ router.delete('/:id', authMiddleware, async (req, res) => {
         }
         await Income.findByIdAndRemove(req.params.id);
         res.json({ message: 'Income entry removed' });
-    } catch (err) {
+    } 
+    catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
     }

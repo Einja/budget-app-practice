@@ -1,3 +1,4 @@
+// This file is needed so we can allow only authorized users to add/remove certain objects to the database. (e.g. income and expenses)
 const jwt = require('jsonwebtoken');
 
 module.exports = function (req, res, next) {

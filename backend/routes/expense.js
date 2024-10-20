@@ -17,7 +17,8 @@ router.post('/', authMiddleware, async (req, res) => {
         });
         const savedExpense = await newExpense.save();
         res.status(201).json(savedExpense);
-    } catch (err) {
+    } 
+    catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
     }
@@ -47,7 +48,8 @@ router.put('/:id', authMiddleware, async (req, res) => {
         }
         expense = await Expense.findByIdAndUpdate(req.params.id, { $set: { amount, category, description, date } }, { new: true });
         res.json(expense);
-    } catch (err) {
+    } 
+    catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
     }
@@ -65,7 +67,8 @@ router.delete('/:id', authMiddleware, async (req, res) => {
         }
         await Expense.findByIdAndRemove(req.params.id);
         res.json({ message: 'Expense removed' });
-    } catch (err) {
+    } 
+    catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
     }
